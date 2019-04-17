@@ -43,7 +43,7 @@ Partial Class frmverpagos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblcant = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbltotal = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.btncancelar = New System.Windows.Forms.Button()
@@ -284,15 +284,15 @@ Partial Class frmverpagos
         Me.Label3.TabIndex = 35
         Me.Label3.Text = "Total:"
         '
-        'Label4
+        'lbltotal
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(493, 554)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 22)
-        Me.Label4.TabIndex = 36
-        Me.Label4.Text = "$1000000"
+        Me.lbltotal.AutoSize = True
+        Me.lbltotal.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotal.Location = New System.Drawing.Point(493, 554)
+        Me.lbltotal.Name = "lbltotal"
+        Me.lbltotal.Size = New System.Drawing.Size(21, 22)
+        Me.lbltotal.TabIndex = 36
+        Me.lbltotal.Text = "0"
         '
         'GroupBox2
         '
@@ -343,7 +343,7 @@ Partial Class frmverpagos
         Me.ClientSize = New System.Drawing.Size(597, 589)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.lblcant)
@@ -388,7 +388,7 @@ Partial Class frmverpagos
     Friend WithEvents Label1 As Label
     Friend WithEvents lblcant As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lbltotal As Label
     Friend WithEvents cmbempleado As ComboBox
     Friend WithEvents rbempleado As RadioButton
     Friend WithEvents GroupBox2 As GroupBox

@@ -35,7 +35,7 @@
             Dim Consulta As String = ""
             If rbcliente.Checked = True Then
                 If cmbcliente.Text <> "" Then
-                    Consulta = "SELECT p.Fecha, p.Tipo, p.Importe, e.Nombre as Empleado, u.Nombre as Usuario FROM Pagos p INNER JOIN Empleados e ON p.Empleado = e.ID INNER JOIN Usuarios u ON p.Usuario = u.ID WHERE p.Cliente ='" + cmbcliente.Text + "'"
+                    Consulta = "SELECT  p.Tipo, p.Importe, e.Nombre as Empleado, p.Fecha, u.Nombre as Usuario FROM Pagos p INNER JOIN Empleados e ON p.Empleado = e.ID INNER JOIN Usuarios u ON p.Usuario = u.ID WHERE p.Cliente ='" + cmbcliente.Text + "'"
                 Else
                     MsgBox("Por favor seleccione un cliente", Title:="ReDim Software")
                     Exit Sub
@@ -43,13 +43,13 @@
             ElseIf rbempleado.Checked = True Then
                 If cmbempleado.Text <> "" Then
                     Dim IDEmp As String = acceso.Ejecutar_Query("ExecuteScalar", "SELECT ID FROM Empleados WHERE Nombre ='" + cmbempleado.Text + "'")
-                    Consulta = "SELECT p.Fecha, p.Tipo, p.Importe, p.Cliente, u.Nombre as Usuario FROM Pagos p INNER JOIN Usuarios u ON p.Usuario = u.ID WHERE p.Empleado = '" + IDEmp + "'"
+                    Consulta = "SELECT  p.Tipo, p.Importe, p.Cliente, p.Fecha, u.Nombre as Usuario FROM Pagos p INNER JOIN Usuarios u ON p.Usuario = u.ID WHERE p.Empleado = '" + IDEmp + "'"
                 Else
                     MsgBox("Por favor seleccione un Empleado", Title:="ReDim Software")
                     Exit Sub
                 End If
             Else
-                Consulta = "SELECT p.Fecha, p.Tipo, p.Importe, p.Cliente, e.Nombre as Empleado, u.Nombre as Usuario FROM Pagos p INNER JOIN Empleados e ON p.Empleado = e.ID INNER JOIN Usuarios u ON p.Usuario = u.ID WHERE"
+                Consulta = "SELECT p.Tipo, p.Importe, p.Cliente, e.Nombre as Empleado, p.Fecha, u.Nombre as Usuario FROM Pagos p INNER JOIN Empleados e ON p.Empleado = e.ID INNER JOIN Usuarios u ON p.Usuario = u.ID WHERE"
             End If
             If rbfecha.Checked = True And rbcliente.Checked = True Or rbfecha.Checked = True And rbempleado.Checked = True Then
                 Consulta = Consulta + " AND Fecha = '" + msk1.Text + "'"
@@ -65,6 +65,12 @@
             dgvpagos.DataSource = DS.Tables(0).DefaultView
             btncancelar.Enabled = True
             lblcant.Text = dgvpagos.Rows.Count
+            Dim dot As Double = 0
+            For i = 0 To dgvpagos.Rows.Count - 1
+                dot += CDbl(dgvpagos.Rows(i).Cells(1).Value)
+            Next
+            lbltotal.Text = "$" + CStr(dot)
+
         Catch ex As Exception
             MsgBox("Error al buscar pagos, por favor reinicie la ventana", Title:="ReDim Software")
         End Try
@@ -115,6 +121,12 @@
         rbfecha.Checked = False
         rbrangofecha.Checked = False
         dgvpagos.DataSource = Nothing
+        msk1.Text = ""
+        msk2.Text = ""
+        lbltotal.Text = ""
+        lblcant.Text = ""
+        cmbcliente.Text = ""
+        cmbempleado.Text = ""
         dgvpagos.Rows.Clear()
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
