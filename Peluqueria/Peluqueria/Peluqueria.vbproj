@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6859E4F-F1C4-4D63-B10B-ED52D01E59B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Peluqueria.My.MyApplication</StartupObject>
+    <RootNamespace>Peluqueria</RootNamespace>
+    <AssemblyName>Peluqueria</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Peluqueria.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Peluqueria.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoSQL.vb" />
+    <Compile Include="Back-Up\frmconfback.Designer.vb">
+      <DependentUpon>frmconfback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Back-Up\frmconfback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Back-Up\frmopback.Designer.vb">
+      <DependentUpon>frmopback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Back-Up\frmopback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\frmcliente_alta.Designer.vb">
+      <DependentUpon>frmcliente_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\frmcliente_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\frmempleados_alta.Designer.vb">
+      <DependentUpon>frmempleados_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmempleados_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\frmempleados_edit.Designer.vb">
+      <DependentUpon>frmempleados_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmempleados_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmfecha.Designer.vb">
+      <DependentUpon>frmfecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmfecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmcorte_alta.Designer.vb">
+      <DependentUpon>frmcorte_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmcorte_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmcorte_edit.Designer.vb">
+      <DependentUpon>frmcorte_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmcorte_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmempresumen.Designer.vb">
+      <DependentUpon>frmempresumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmempresumen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmlistaempl.Designer.vb">
+      <DependentUpon>frmlistaempl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmlistaempl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmresumen.Designer.vb">
+      <DependentUpon>frmresumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmresumen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmverpagos.Designer.vb">
+      <DependentUpon>frmverpagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmverpagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmverusu.Designer.vb">
+      <DependentUpon>frmverusu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmverusu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeluDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeluDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PeluDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeluDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Turnos\frmturnos_alta.Designer.vb">
+      <DependentUpon>frmturnos_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Turnos\frmturnos_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagos\frmpagos_alta.Designer.vb">
+      <DependentUpon>frmpagos_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pagos\frmpagos_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagos\frmpagos_edit.Designer.vb">
+      <DependentUpon>frmpagos_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pagos\frmpagos_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Turnos\frmturnos_edit.Designer.vb">
+      <DependentUpon>frmturnos_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Turnos\frmturnos_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Alta_usu.Designer.vb">
+      <DependentUpon>Alta_usu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Alta_usu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrin.Designer.vb">
+      <DependentUpon>MenuPrin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\frmcleinte_edit.Designer.vb">
+      <DependentUpon>frmcleinte_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\frmcleinte_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Modificar_usu.Designer.vb">
+      <DependentUpon>Modificar_usu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Modificar_usu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Back-Up\frmconfback.resx">
+      <DependentUpon>frmconfback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Back-Up\frmopback.resx">
+      <DependentUpon>frmopback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\frmcliente_alta.resx">
+      <DependentUpon>frmcliente_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\frmempleados_alta.resx">
+      <DependentUpon>frmempleados_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\frmempleados_edit.resx">
+      <DependentUpon>frmempleados_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmfecha.resx">
+      <DependentUpon>frmfecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmcorte_alta.resx">
+      <DependentUpon>frmcorte_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmcorte_edit.resx">
+      <DependentUpon>frmcorte_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmempresumen.resx">
+      <DependentUpon>frmempresumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmlistaempl.resx">
+      <DependentUpon>frmlistaempl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmresumen.resx">
+      <DependentUpon>frmresumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmverpagos.resx">
+      <DependentUpon>frmverpagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmverusu.resx">
+      <DependentUpon>frmverusu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Turnos\frmturnos_alta.resx">
+      <DependentUpon>frmturnos_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagos\frmpagos_alta.resx">
+      <DependentUpon>frmpagos_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagos\frmpagos_edit.resx">
+      <DependentUpon>frmpagos_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Turnos\frmturnos_edit.resx">
+      <DependentUpon>frmturnos_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Alta_usu.resx">
+      <DependentUpon>Alta_usu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrin.resx">
+      <DependentUpon>MenuPrin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\frmcleinte_edit.resx">
+      <DependentUpon>frmcleinte_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Modificar_usu.resx">
+      <DependentUpon>Modificar_usu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PeluDataSet.xsc">
+      <DependentUpon>PeluDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PeluDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeluDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PeluDataSet.xss">
+      <DependentUpon>PeluDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PeluDataSet1.xsc">
+      <DependentUpon>PeluDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PeluDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeluDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PeluDataSet1.xss">
+      <DependentUpon>PeluDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\iconfinder_InterfaceExpendet-10_592607.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_InterfaceExpendet-09_592608.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_InterfaceExpendet-09_5926081.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icono.ico" />
+    <None Include="Resources\timetable1.png" />
+    <None Include="Resources\UserAzul.png" />
+    <None Include="Resources\settings%283%29.png" />
+    <None Include="Resources\database%283%29.png" />
+    <None Include="Resources\database1.png" />
+    <None Include="Resources\settings%281%29.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\database%282%29.png" />
+    <None Include="Resources\database%281%291.png" />
+    <None Include="Resources\database%281%29.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\ac6e69_48bd9f24a3df49c4ab04cf2df38b6989~mv2.gif" />
+    <None Include="Resources\loading-gears-animation-13.gif" />
+    <None Include="Resources\checked.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\timetable%281%29.png" />
+    <None Include="Resources\Turno_edit.png" />
+    <None Include="Resources\Turno_alta.png" />
+    <None Include="Resources\timetable.png" />
+    <None Include="Resources\Pagos.png" />
+    <None Include="Resources\Resumen.png" />
+    <None Include="Resources\Lista_empleados.png" />
+    <None Include="Resources\Empleado_resumen.png" />
+    <None Include="Resources\Corte_edit.png" />
+    <None Include="Resources\Corte_alta.png" />
+    <None Include="Resources\Empleado_edit.png" />
+    <None Include="Resources\Empleado_alta.png" />
+    <None Include="Resources\user3.png" />
+    <None Include="Resources\user2.png" />
+    <None Include="Resources\3 copia 6.png" />
+    <None Include="Resources\4 copia 5.png" />
+    <None Include="Resources\4 copia 3.png" />
+    <None Include="Resources\3 copia 5.png" />
+    <None Include="Resources\4 copia1.png" />
+    <None Include="Resources\3 copia1.png" />
+    <None Include="Resources\4 copia.png" />
+    <None Include="Resources\3 copia.png" />
+    <None Include="Resources\1 copia.png" />
+    <None Include="Resources\2 copia.png" />
+    <None Include="Resources\1 copia 2.png" />
+    <None Include="Resources\2 copia 2.png" />
+    <None Include="Resources\4 copia 4.png" />
+    <None Include="Resources\3 copia 3.png" />
+    <None Include="Resources\3 copia 4.png" />
+    <None Include="Resources\4 copia 2.png" />
+    <None Include="Resources\3 copia 2.png" />
+    <None Include="Resources\profiles%281%29.png" />
+    <None Include="Resources\profiles.png" />
+    <None Include="Resources\receipt.png" />
+    <None Include="Resources\scissor-and-comb%281%29.png" />
+    <None Include="Resources\scissors-and-comb1.png" />
+    <None Include="Resources\scissors-and-comb.png" />
+    <None Include="Resources\iconfinder_sign-check_299110.png" />
+    <None Include="Resources\111.png" />
+    <None Include="Resources\Fondo_pagosalta.png" />
+    <None Include="Resources\Fondo_Login.png" />
+    <None Include="Resources\Fondo_altausu.png" />
+    <None Include="Resources\fondo_borrarpago.png" />
+    <None Include="Resources\Fondo_nuevopago .png" />
+    <None Include="Resources\Fondo_altaCliente.png" />
+    <None Include="Resources\14.png" />
+    <None Include="Resources\13.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\fondo1.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\FondoModUsu.png" />
+    <None Include="Resources\FondoModcliente.png" />
+    <None Include="Resources\multiple-users-silhouette%281%29.png" />
+    <None Include="Resources\clock-circular-outline.png" />
+    <None Include="Resources\Mesa de trabajo 4.png" />
+    <None Include="Resources\Mesa de trabajo 5.png" />
+    <None Include="Resources\Mesa de trabajo 2.png" />
+    <None Include="Resources\Mesa de trabajo 3.png" />
+    <None Include="Resources\Mesa de trabajo 1.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <None Include="Resources\user%284%29.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\fondo.png" />
+    <None Include="Resources\user%282%29.png" />
+    <None Include="Resources\panelizquierdo.png" />
+    <None Include="Resources\user%281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\fondomodificaru.png" />
+    <None Include="Resources\Modificar_usu.png" />
+    <None Include="Resources\Sin título.png" />
+    <None Include="Resources\calndarmod.png" />
+    <None Include="Resources\calendaragregar.png" />
+    <None Include="Resources\iconfinder_InterfaceExpendet-10_5926071.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calendario.png" />
+    <None Include="Resources\Modificar cliente.png" />
+    <None Include="Resources\Nuevo cliente.png" />
+    <None Include="Resources\cleinte1.png" />
+    <None Include="Resources\Cliente.png" />
+    <None Include="Resources\modificar.png" />
+    <None Include="Resources\iconfinder_InterfaceExpendet-09_5926082.png" />
+    <None Include="Resources\icono.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
